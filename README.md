@@ -1,6 +1,6 @@
 # Timothy's Terminal
 
-[![Deployed with GitHub Pages](https://github.com/timotheus1907/timotheus1907.github.io/actions/workflows/deploy.yml)
+[Deployed with GitHub Pages](https://github.com/timotheus1907/timotheus1907.github.io/actions/workflows/deploy.yml)
 
 My personal developer portfolio, styled like a terminal.
 

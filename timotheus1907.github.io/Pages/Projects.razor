@@ -5,7 +5,7 @@
 <h1 class="visually-hidden">Projects</h1>
 
 <div class="projects-list d-flex flex-column gap-1">
-    @foreach (var p in projects)
+    @foreach (var p in ProjectData.All)
     {
         <a class="project-tile d-block position-relative overflow-hidden"
            href="@(p.IsWip ? null : p.Href)" target="_blank" rel="noopener">
@@ -31,16 +31,3 @@
         </a>
     }
 </div>
-
-@code {
-    // Href = source code link. For Companydle it is the GitHub Pages site instead.
-    private record Project(string Name, string Image, string? Href, bool IsWip = false);
-
-    private readonly List<Project> projects = new()
-    {
-        new("CompanyDle", "images/companydle-temp.jpg", "https://timotheus1907.github.io/companydle/"),
-        new("Record Shop", "images/recordshop-temp.png", "https://github.com/Timotheus1907/nc-recordshop-frontend"),
-        new("OpenTK Project", "images/OpenGL-temp.png", null, IsWip: true),
-        new("Godot Project", "images/godot-temp.png", null, IsWip: true),
-    };
-}

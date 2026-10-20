@@ -22,11 +22,20 @@
                                 @onclick="ToggleProjects" @onclick:stopPropagation="true"></button>
                     </div>
                     <ul class="dropdown-menu @(projectsOpen ? "show" : null)" data-bs-popper="static">
-                        <li>
-                            <a class="dropdown-item" href="https://timotheus1907.github.io/companydle/"
-                               target="_blank" rel="noopener">CompanyDle</a>
-                        </li>
-                        @* add more projects here *@
+                        @foreach (var p in ProjectData.All)
+                        {
+                            <li>
+                                <a class="dropdown-item @(p.IsWip ? "disabled" : null)"
+                                   href="@(p.IsWip ? null : p.Href)" target="_blank" rel="noopener"
+                                   aria-disabled="@(p.IsWip ? "true" : null)">
+                                    @p.Name
+                                    @if (p.IsWip)
+                                    {
+                                        <span class="badge text-bg-warning ms-1">WIP</span>
+                                    }
+                                </a>
+                            </li>
+                        }
                     </ul>
                 </li>
             </ul>

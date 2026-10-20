@@ -24,6 +24,12 @@
     }
 }
 
+.projects-list {
+    max-width: 100vh; /* fallback for older browsers */
+    max-width: 100dvh; /* the window's height, accounting for phone browser bars */
+    margin-inline: auto; /* centre the list when it's capped */
+}
+
 
 
 html, body {

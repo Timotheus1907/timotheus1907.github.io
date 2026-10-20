@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Developer portfolio icon</title>
+  <desc id="desc">A white laptop outline with an electric-blue code symbol on a dark rounded-square background.</desc>
+  <rect width="64" height="64" rx="13" fill="#0B1020"/>
+  <g stroke="#F4F7FC" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="13.5" y="11" width="37" height="30" rx="4.2" stroke-width="2.8"/>
+    <path d="M10.5 42.4H53.5L51.2 47.2C50.8 48.1 49.9 48.7 48.9 48.7H15.1C14.1 48.7 13.2 48.1 12.8 47.2L10.5 42.4Z" fill="#F4F7FC" stroke-width="1.2"/>
+  </g>
+  <path d="M27 21.5L22.5 26L27 30.5M37 21.5L41.5 26L37 30.5M34.5 19.8L29.5 32.2" stroke="#35A7FF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M27.5 42.5L29.3 44.4H34.7L36.5 42.5" fill="#0B1020"/>
+</svg>

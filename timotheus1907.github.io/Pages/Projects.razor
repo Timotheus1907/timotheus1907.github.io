@@ -1,7 +1,46 @@
 ﻿@page "/projects"
 
-<h3>Projects</h3>
+<PageTitle>Projects | Timothy's Terminal</PageTitle>
+
+<h1 class="visually-hidden">Projects</h1>
+
+<div class="d-flex flex-column gap-1">
+    @foreach (var p in projects)
+    {
+        <a class="project-tile d-block position-relative overflow-hidden"
+           href="@(p.IsWip ? null : p.Href)" target="_blank" rel="noopener">
+
+            <div class="ratio ratio-21x9">
+                <img src="@p.Image" alt="" loading="lazy"
+                     class="object-fit-cover @(p.IsWip ? "opacity-50" : null)" />
+            </div>
+
+            @if (p.IsWip)
+            {
+                <img src="images/gears.svg" alt="" width="96" height="96"
+                     class="position-absolute top-50 start-50 translate-middle" />
+            }
+
+            <div class="project-overlay position-absolute top-0 start-0 w-100 h-100">
+                <span class="fs-2 fw-bold text-white">@p.Name</span>
+                @if (p.IsWip)
+                {
+                    <span class="badge text-bg-warning mt-2">Work in progress</span>
+                }
+            </div>
+        </a>
+    }
+</div>
 
 @code {
+    // Href = source code link. For Companydle it is the GitHub Pages site instead.
+    private record Project(string Name, string Image, string? Href, bool IsWip = false);
 
+    private readonly List<Project> projects = new()
+    {
+        new("Companydle", "images/companydle.jpg", "https://timotheus1907.github.io/companydle/"),
+        new("Project Two", "images/project-two.jpg", "https://github.com/timotheus1907/project-two"),
+        new("OpenTK Project", "images/OpenGL-temp.png", null, IsWip: true),
+        new("Godot Project", "images/godot-temp.png", null, IsWip: true),
+    };
 }
